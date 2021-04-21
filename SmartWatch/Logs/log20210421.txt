@@ -1,0 +1,58 @@
+2021-04-21 13:28:04.630 +07:00 [INF] Starting web host
+2021-04-21 13:28:05.722 +07:00 [FTL] Host terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: SmartWatch.Services.BrandWatch.IBrandWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.BrandWatch.BrandWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.BrandWatch.BrandWatchService'.) (Error while validating the service descriptor 'ServiceType: SmartWatch.Services.DetailWatch.IDetailWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.DetailWatch.DetailWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.DetailWatch.DetailWatchService'.) (Error while validating the service descriptor 'ServiceType: SmartWatch.Services.ColorWatch.IColorWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.ColorWatch.ColorWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.ColorWatch.ColorWatchService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: SmartWatch.Services.BrandWatch.IBrandWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.BrandWatch.BrandWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.BrandWatch.BrandWatchService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.BrandWatch.BrandWatchService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at SmartWatch.Program.Main(String[] args) in C:\Users\anatt\OneDrive - Suan Dusit University\Desktop\SmartWatch\SmartWatch\Program.cs:line 28
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: SmartWatch.Services.DetailWatch.IDetailWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.DetailWatch.DetailWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.DetailWatch.DetailWatchService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.DetailWatch.DetailWatchService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: SmartWatch.Services.ColorWatch.IColorWatchService Lifetime: Scoped ImplementationType: SmartWatch.Services.ColorWatch.ColorWatchService': Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.ColorWatch.ColorWatchService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'AutoMapper.Configuration.IConfiguration' while attempting to activate 'SmartWatch.Services.ColorWatch.ColorWatchService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2021-04-21 14:40:11.753 +07:00 [INF] Starting web host
+2021-04-21 14:42:49.093 +07:00 [INF] Starting web host
+2021-04-21 14:44:46.122 +07:00 [INF] Starting web host
+2021-04-21 15:03:39.806 +07:00 [INF] Starting web host
+2021-04-21 15:10:12.571 +07:00 [INF] Starting web host
+2021-04-21 15:12:23.496 +07:00 [INF] Starting web host
+2021-04-21 15:16:33.973 +07:00 [INF] Starting web host
+2021-04-21 15:16:58.765 +07:00 [INF] Starting web host
+2021-04-21 15:17:06.847 +07:00 [INF] Starting web host
+2021-04-21 15:18:30.526 +07:00 [INF] Starting web host
+2021-04-21 15:22:21.356 +07:00 [INF] Starting web host
+2021-04-21 15:22:47.665 +07:00 [INF] Starting web host
+2021-04-21 15:26:14.415 +07:00 [INF] Starting web host
+2021-04-21 15:34:41.893 +07:00 [INF] Starting web host
+2021-04-21 15:46:10.229 +07:00 [INF] Starting web host
